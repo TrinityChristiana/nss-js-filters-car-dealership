@@ -15,11 +15,11 @@ dataPromise.then(data => {
     const year = 2017;
     carReport[`Profit in ${year}`] = findTotalProfit.fromYear(year, data);
     carReport["Popular Month(s)"] = findPopularMonth.getIt(data);
-    carReport["Popular Sales Person"] = findPopularSalePerson;
-    carReport["Made Most Profit"] = findMostMoneySales;
-    carReport["Most Popular Model"] = findPopularModel;
-    carReport["Most Loaned Loans"] = findPopularBank;
-    carReport["Month w/ No Car Sales"] = findUnpopularMonth;
+    carReport["Popular Sales Person"] = findPopularSalePerson.run(data);
+    carReport["Made Most Profit"] = findMostMoneySales.run(data);
+    carReport["Most Popular Model"] = findPopularModel.run(data);
+    carReport["Most Loaned Loans"] = findPopularBank.run(data);
+    carReport["Month w/ No Car Sales"] = findUnpopularMonth.run(data);
     console.log(carReport);
     renderDOM.render("report-container", carReport, year);
 });
