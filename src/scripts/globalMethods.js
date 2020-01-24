@@ -33,7 +33,7 @@ const globalMethods = {
 
         // adds month and amout of duplicates in order of th sorted keys
         keysSorted.forEach(element => {
-            sortedObj[/\d/.test(element) ? `"${element}"`:`${element}`] = count[`${element}`];
+            sortedObj[/\d/.test(element) ? `"${element}"` : `${element}`] = count[`${element}`];
         });
         return sortedObj;
     },
@@ -71,6 +71,25 @@ const globalMethods = {
 
         }
         return highestValueKeys;
+    },
+    combineArrays(arrays) {
+        if (arrays.length == 2) {
+            let combinedArray = [];
+            let i = 0;
+            arrays[0].forEach(array => {
+                combinedArray.push(`${array} ${arrays[1][i]}`);
+                i++;
+            });
+            return combinedArray;
+        } else if (arrays.length == 3) {
+            let combinedArray = [];
+            let i = 0;
+            arrays[0].forEach(array => {
+                combinedArray.push([`${array} ${arrays[1][i]}`, arrays[2][i]]);
+                i++;
+            });
+            return combinedArray;
+        }
     }
 };
 

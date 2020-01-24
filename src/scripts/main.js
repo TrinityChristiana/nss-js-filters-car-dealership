@@ -24,9 +24,6 @@ dataPromise.then(data => {
     renderDOM.render("report-container", carReport, year);
 });
 
-
-
-// Which salesperson made the most profit?
 // Which model was the most popular?
 // Which bank provided the most loans to our customers?
 // In which month did zero cars get sold?
