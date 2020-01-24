@@ -57,11 +57,8 @@ const findPopularMonth = {
     },
     getIt(cars) {
         const monthNumbers = this.getMonthNumbers(cars);
-        console.log("monthNumbers", monthNumbers);
         const duplicates = this.countDuplicates(monthNumbers);
-        console.log("duplicates", duplicates);
         const sortedObj = this.sortObjFromGtoL(duplicates);
-        console.log("sortedObj", sortedObj);
         return this.collectHighestSaleMonths(sortedObj);
     }
 };
