@@ -6,8 +6,9 @@ import findPopularMonth from "./findPopularMonth.js"
 
 let dataPromise = API.fetchData()
 dataPromise.then(data => {
-    carReport.profit = findTotalProfit.fromYear(2017, data);
-    carReport.popularMonth = findPopularMonth(data);
+    const year = 2017;
+    carReport.profit = findTotalProfit.fromYear(year, data);
+    carReport.popularMonth = findPopularMonth.getMonthNumbers(data);
     console.log(carReport);
 });
 
