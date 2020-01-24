@@ -37,6 +37,20 @@ const globalMethods = {
         });
         return sortedObj;
     },
+    sortObjFromLtoG(count) {
+        // Sorts the keys by number of duplicates greatest to least
+        const keysSorted = Object.keys(count).sort(function (a, b) {
+            return count[a] - count[b]
+        });
+        // New object to hold sorted months
+        const sortedObj = {};
+
+        // adds month and amout of duplicates in order of th sorted keys
+        keysSorted.forEach(element => {
+            sortedObj[/\d/.test(element) ? `"${element}"` : `${element}`] = count[`${element}`];
+        });
+        return sortedObj;
+    },
     collectHighestValues(sortedObj) {
         const highestValueKeys = [];
 
@@ -90,6 +104,19 @@ const globalMethods = {
             });
             return combinedArray;
         }
+    },
+    getMonthNames(propNumber) {
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        return monthNames[parseInt(propNumber, 10) - 1];
+    },
+    changeArrNumWithMonthName(highestKeys){
+        return highestKeys.map(element => this.getMonthNames(element));
+    },
+    takeOutMonths(purchaseDates){
+        const monthNumbers = purchaseDates.map(element => {
+            return element.split("-")[1];
+        });
+        return monthNumbers;
     }
 };
 

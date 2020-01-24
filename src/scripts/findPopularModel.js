@@ -5,8 +5,7 @@ const findPopularModel = {
         const models = method.getSelector(data, ["vehicle", "model"]);
         const duplicates = method.countDuplicates(models);
         const sortedObj = method.sortObjFromGtoL(duplicates);
-        console.log(sortedObj);
-        return method.collectHighestValues(sortedObj);
+        return method.collectHighestValues(sortedObj).join(", ");
     }
 }
 

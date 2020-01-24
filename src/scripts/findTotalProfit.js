@@ -15,7 +15,7 @@ const findTotalProfit = {
     fromYear(year, cars) {
         const carsFromYear = this.filterCarsFromYear(year, cars);
         const profit = this.getProfitFromCars(carsFromYear);
-        return profit;
+        return "$" + profit.toFixed(2);
     }
 }
 
