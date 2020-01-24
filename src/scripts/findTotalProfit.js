@@ -1,6 +1,5 @@
 // Total profit for 2017
 const findTotalProfit = {
-
     filterCarsFromYear(selYear, cars) {
         const carsFromSelYear = cars.filter((car) => {
             const year = car.purchase_date.split("-")[0];
