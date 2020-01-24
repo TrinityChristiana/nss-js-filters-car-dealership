@@ -42,7 +42,6 @@ const globalMethods = {
 
         let topValue;
 
-
         let i = 0;
         for (let prop in sortedObj) {
             if (/\d/.test(prop)) {
