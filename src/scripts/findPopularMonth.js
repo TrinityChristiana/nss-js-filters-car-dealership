@@ -9,14 +9,14 @@ const findPopularMonth = {
             const month = car.purchase_date.split("-")[1];
             months.push(month);
         });
-        this.countDuplicates(months);
+        return months;
     },
     countDuplicates(numberArray) {
         // Holds information about duplicates
         let count = {};
         // counts how many times a number shows up and puts info into count obj
         numberArray.forEach((x) => count[x] = (count[x] || 0) + 1);
-        this.sortObjFromGtoL(count);
+        return count;
     },
     sortObjFromGtoL(count) {
         // Sorts the keys by number of duplicates greatest to least
@@ -30,48 +30,40 @@ const findPopularMonth = {
         keysSorted.forEach(element => {
             sortedMonths[`"${element}"`] = count[`${element}`];
         });
-        this.collectHighestSaleMonths(sortedMonths);
+        return sortedMonths;
     },
     getMonthNames(propNumber) {
-        const monthNames = ["january", "feburary", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+        const monthNames = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
         return monthNames[parseInt(propNumber, 10) - 1];
     },
     collectHighestSaleMonths(sortedMonths) {
         const highSalesMonths = [];
+        let topSaleValue;
         let i = 0;
         for (let prop in sortedMonths) {
             i++;
             const propNumber = prop[1] + prop[prop.length - 2];
             const propMonth = this.getMonthNames(propNumber);
-            console.log(propMonth);
             if (i == 1) {
-                highSalesMonths.push([propMonth, sortedMonths[prop]]);
-                console.log(prop.length);
+                topSaleValue = sortedMonths[prop];
+                highSalesMonths.push(propMonth);
             } else {
-                if (sortedMonths[prop] == highSalesMonths[0][1]) {
+                if (sortedMonths[prop] == topSaleValue) {
                     highSalesMonths.push(propMonth);
                 }
             }
         }
+        return highSalesMonths;
     },
-    holdExtraStuff() {
-
-
-
-
-        carReport.popularMonth = [highSalesMonths[0][0]];
-        highSalesMonths.shift();
-        if (highSalesMonths.length > 0) {
-            highSalesMonths.forEach(month => {
-                carReport.popularMonth.push(month);
-            });
-            highSalesMonths.push(highSalesMonths)
-        }
+    getIt(cars) {
+        const monthNumbers = this.getMonthNumbers(cars);
+        console.log("monthNumbers", monthNumbers);
+        const duplicates = this.countDuplicates(monthNumbers);
+        console.log("duplicates", duplicates);
+        const sortedObj = this.sortObjFromGtoL(duplicates);
+        console.log("sortedObj", sortedObj);
+        return this.collectHighestSaleMonths(sortedObj);
     }
 };
-
-
-
-
 
 export default findPopularMonth;

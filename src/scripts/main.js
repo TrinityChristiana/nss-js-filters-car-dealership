@@ -8,7 +8,7 @@ let dataPromise = API.fetchData()
 dataPromise.then(data => {
     const year = 2017;
     carReport.profit = findTotalProfit.fromYear(year, data);
-    carReport.popularMonth = findPopularMonth.getMonthNumbers(data);
+    carReport.popularMonth = findPopularMonth.getIt(data);
     console.log(carReport);
 });
 
@@ -20,4 +20,4 @@ dataPromise.then(data => {
 // Which bank provided the most loans to our customers?
 // In which month did zero cars get sold?
 
-console.log(carReport);
+// console.log(carReport);
