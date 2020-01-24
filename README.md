@@ -1,7 +1,12 @@
-# Name Of Repo
+# Car Dealership
 
-Date Created: 01/00/20 | Date Modified: 01/00/20
+Date Created: 01/23/20 | Date Modified: 01/24/20
 
-Preview Assignment: 
+*This assignment is practice for Book 3: Chapter 5 of NSS's course work. Link to the assignment: https://github.com/TrinityTerry/client-side-mastery/blob/master/book-3-the-initiate/chapters/JS_ARRAY_METHODS.md#advanced-challenge-car-dealership*
+
+Preview assignment here: linktopreviewhere
 ***
-# nss-js-filters-car-dealership
+
+This aassignment filters through an object
+
+![](imgHere)
