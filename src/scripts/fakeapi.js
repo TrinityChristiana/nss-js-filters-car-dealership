@@ -1,3 +1,5 @@
+// This holds default data for if json server doesn't work
+
 const cars = [{
         "vehicle": {
             "year": 2013,

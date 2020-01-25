@@ -1,23 +1,20 @@
-// Which salesperson made the most profit?
+// Calculates which salesperson made the most profit
 import method from "./globalMethods.js";
 
 const findMostMoneySales = {
+    // main function that calls methods to calculate data
+    // => array
     run(data) {
-        const firstNames = method.getSelector(data, ["sales_agent", "first_name"]);
-        const lastNames = method.getSelector(data, ["sales_agent", "last_name"]);
-        const profitArray = method.getSelector(data, "gross_profit");
+        const firstNames = method.getPropertyValue(data, ["sales_agent", "first_name"]);
+        const lastNames = method.getPropertyValue(data, ["sales_agent", "last_name"]);
+        const profitArray = method.getPropertyValue(data, "gross_profit");
         const nameWithProfits = method.combineArrays([firstNames, lastNames, profitArray]);
         const combinedProfitsObj = this.combineNameswProfit(nameWithProfits);
-        const sortedObj = method.sortObjFromGtoL(combinedProfitsObj);
-        return method.collectHighestValues(sortedObj);
+        const sortedObj = method.sortObj(combinedProfitsObj, "GtoL");
+        return method.collectFirstObjValues(sortedObj);
     },
-    filterCarsByPerson() {
-        const carsFromSelYear = cars.filter((car) => {
-            const year = car.purchase_date.split("-")[0];
-            if (year == selYear) return car;
-        });
-        return carsFromSelYear;
-    },
+    // Combines profit for each sales person by adding duplicates together
+    // => object
     combineNameswProfit(nameWithProfits) {
         let count = {};
             nameWithProfits.forEach((x) => {

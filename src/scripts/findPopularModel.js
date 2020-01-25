@@ -1,11 +1,13 @@
 import method from "./globalMethods.js";
 
 const findPopularModel = {
-    run(data){
-        const models = method.getSelector(data, ["vehicle", "model"]);
+    // main function that calls methods to calculate data
+    // => string
+    run(data) {
+        const models = method.getPropertyValue(data, ["vehicle", "model"]);
         const duplicates = method.countDuplicates(models);
-        const sortedObj = method.sortObjFromGtoL(duplicates);
-        return method.collectHighestValues(sortedObj).join(", ");
+        const sortedObj = method.sortObj(duplicates, "GtoL");
+        return method.collectFirstObjValues(sortedObj).join(", ");
     }
 }
 

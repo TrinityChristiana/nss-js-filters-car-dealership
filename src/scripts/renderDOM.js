@@ -1,10 +1,12 @@
 const renderDOM = {
-    render(id, obj, year){
+    // Adds HTML to container
+    render(id, obj){
         const container = document.getElementById(`${id}`);
-        const html = this.makeObjHTML(obj, year);
+        const html = this.makeObjHTML(obj);
         container.innerHTML = html;
     },
-    makeObjHTML(obj, year){
+    // Created HTML to show info on dom from object
+    makeObjHTML(obj){
         let objHTML = "";
         for(const prop in obj){
             objHTML += `

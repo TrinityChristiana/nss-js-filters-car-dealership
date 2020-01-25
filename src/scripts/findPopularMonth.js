@@ -2,12 +2,14 @@
 import method from "./globalMethods.js";
 
 const findPopularMonth = {
-    getIt(cars) {
-        const purchaseDates = method.getSelector(cars, "purchase_date");
+    // main function that calls methods to calculate data
+    // => string
+    run(cars) {
+        const purchaseDates = method.getPropertyValue(cars, "purchase_date");
         const monthNumbers = method.takeOutMonths(purchaseDates);
         const duplicates = method.countDuplicates(monthNumbers);
-        const sortedObj = method.sortObjFromGtoL(duplicates);
-        const highestKeys = method.collectHighestValues(sortedObj);
+        const sortedObj = method.sortObj(duplicates, "GtoL");
+        const highestKeys = method.collectFirstObjValues(sortedObj);
         return method.changeArrNumWithMonthName(highestKeys).join(", ");
     }
 };
