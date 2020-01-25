@@ -22,6 +22,6 @@ const findMostMoneySales = {
             });
         return count;
     }
-}
+};
 
 export default findMostMoneySales;

@@ -9,6 +9,6 @@ const findPopularBank = {
         const sortedObj = method.sortObj(duplicates, "GtoL");
         return method.collectFirstObjValues(sortedObj);
     }
-}
+};
 
 export default findPopularBank;

@@ -4,8 +4,8 @@ import method from "./globalMethods.js";
 const findPopularMonth = {
     // main function that calls methods to calculate data
     // => string
-    run(cars) {
-        const purchaseDates = method.getPropertyValue(cars, "purchase_date");
+    run(data) {
+        const purchaseDates = method.getPropertyValue(data, "purchase_date");
         const monthNumbers = method.takeOutMonths(purchaseDates);
         const duplicates = method.countDuplicates(monthNumbers);
         const sortedObj = method.sortObj(duplicates, "GtoL");

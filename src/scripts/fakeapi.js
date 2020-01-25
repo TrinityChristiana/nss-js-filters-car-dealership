@@ -1302,6 +1302,6 @@ const cars = [{
             "account": "37055001413014"
         }
     }
-]
+];
 
 export default cars;

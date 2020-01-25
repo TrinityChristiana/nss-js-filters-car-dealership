@@ -2,15 +2,15 @@
 const findTotalProfit = {
     // main function that calls methods to calculate data
     // => string
-    run(year, cars) {
-        const carsFromYear = this.filterCarsFromYear(year, cars);
+    run(year, data) {
+        const carsFromYear = this.filterCarsFromYear(year, data);
         const profit = this.getProfitFromCars(carsFromYear);
         return "$" + profit.toFixed(2);
     },
     // Finds cars from certain year and puts them into an array
     // => array
-    filterCarsFromYear(selYear, cars) {
-        const carsFromSelYear = cars.filter((car) => {
+    filterCarsFromYear(selYear, data) {
+        const carsFromSelYear = data.filter((car) => {
             // seperates year number from YYYY-MM-DD format
             const year = car.purchase_date.split("-")[0];
             if (year == selYear) return car;
@@ -19,9 +19,9 @@ const findTotalProfit = {
     },
     // Calculates profit from all cars passed
     // => number
-    getProfitFromCars(cars) {
+    getProfitFromCars(data) {
         let profitContainer = 0;
-        cars.forEach(car => profitContainer += car.gross_profit);
+        data.forEach(car => profitContainer += car.gross_profit);
         return profitContainer;
     }
 }

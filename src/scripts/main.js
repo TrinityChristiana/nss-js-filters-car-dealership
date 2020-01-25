@@ -20,6 +20,5 @@ dataPromise.then(data => {
     carReport["Most Popular Model"] = findPopularModel.run(data);
     carReport["Most Loaned Loans"] = findPopularBank.run(data);
     carReport["Month w/ No Car Sales"] = findUnpopularMonth.run(data);
-    console.log(carReport);
     renderDOM.render("report-container", carReport);
 });
