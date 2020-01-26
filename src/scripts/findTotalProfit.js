@@ -9,8 +9,8 @@ const findTotalProfit = {
     },
     // Finds cars from certain year and puts them into an array
     // => array
-    filterCarsFromYear(selYear, data) {
-        const carsFromSelYear = data.filter((car) => {
+    filterCarsFromYear(selYear, car) {
+        const carsFromSelYear = car.filter((car) => {
             // seperates year number from YYYY-MM-DD format
             const year = car.purchase_date.split("-")[0];
             if (year == selYear) return car;

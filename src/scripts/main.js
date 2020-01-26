@@ -11,6 +11,7 @@ import findUnpopularMonth from "./findUnpopularMonth.js"
 let dataPromise = API.fetchData();
 
 dataPromise.then(data => {
+    console.log(data);
     const year = 2017;
     const carReport = {};
     carReport[`Profit in ${year}`] = findTotalProfit.run(year, data);
