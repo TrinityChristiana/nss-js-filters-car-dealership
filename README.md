@@ -9,6 +9,14 @@ Date Created: 01/23/20 | Date Modified: 01/24/20
 Preview assignment here: https://trinity-car-dealership.netlify.com/
 ***
 
-This aassignment filters through an object
+This assignment uses array methods to filter through an object to calculate/find the answers to these questions.
 
-![](imgHere)
+1. Total profit for 2017
+2. In which month did they sell the most cars?
+3. Which salesperson sold the most cars?
+4. Which salesperson made the most profit?
+5. Which model was the most popular?
+6. Which bank provided the most loans to our customers?
+7. In which month did zero cars get sold?
+
+![](screenshot.png)
